@@ -32,6 +32,9 @@ public class Recipe {
     @Column
     private String ingredient5;
 
+    @Column
+    private String url;
+
     public Long getId() {
         return id;
     }
@@ -94,5 +97,13 @@ public class Recipe {
 
     public void setIngredient5(String ingredient5) {
         this.ingredient5 = ingredient5;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
