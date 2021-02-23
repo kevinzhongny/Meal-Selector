@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CreateRecipe from './Components/CreateRecipe';
 import Recipes from './Components/Recipes';
-import Home from './Components/Home';
+import Meal_Selector from './Components/Meal_Selector';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -19,7 +19,7 @@ class App extends React.Component {
             <nav>
               <ul className='link-header'>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">Meal Selector</Link>
                 </li>
                 <li>
                   <Link to="/recipes">Recipes</Link>
@@ -40,7 +40,7 @@ class App extends React.Component {
                 <CreateRecipe />
               </Route>
               <Route path="/">
-                <Home />
+                <Meal_Selector />
               </Route>
             </Switch>
           </div>
