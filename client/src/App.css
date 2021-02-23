@@ -36,3 +36,13 @@ li {
   justify-content: center;
   flex-direction: column;
 }
+
+.selector-button {
+  background-color: #61dafb;
+  margin: 0 auto;
+  display: block;
+  padding: 5px;
+  font-size: calc(10px + 1vmin);
+  color: 61dafb;
+  border-radius: 10px;
+}

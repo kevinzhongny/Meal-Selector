@@ -10,19 +10,21 @@ function Meal_Selector() {
             const res = await axios.get('http://localhost:8080/recipes');
             const recipeNum = Math.floor(Math.random() * res.data.length);
             const randomRecipe = res.data[recipeNum];
-            console.log(randomRecipe);
+            // console.log(randomRecipe);
             setRecipes(randomRecipe);
         } catch(e) {
             console.error(e, e.message);
         }
     }
 
-    useEffect(() => {
+    function handleSubmit(e) {
+        e.preventDefault();
         getRecipes();
-    }, [])
+    }
 
     return(
         <div>
+            <button onClick= { (e) => handleSubmit(e)} className="selector-button">Meal Selector</button>
             { recipe && <Recipe recipe= { recipe } key= { recipe.id }/>}
         </div>
     )
