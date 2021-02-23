@@ -1,4 +1,4 @@
-# Meal-Selector
+# [Meal-Selector](http://meal-selector.surge.sh/ "Meal-Selector")
 App that stores recipes and helps user randomly select their next cooked meal
 
 ## To-Do List
