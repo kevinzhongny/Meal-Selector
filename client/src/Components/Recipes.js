@@ -36,7 +36,7 @@ function Recipes() {
         editRecipe();        
     }
 
-    async function editRecipe(e) {
+    async function editRecipe() {
         try {
             const res = await axios.patch('http://localhost:8008/recipes', form);
             console.log(res.data);
@@ -45,6 +45,7 @@ function Recipes() {
             console.error(e, e.message);
         }
     }
+
     async function deleteRecipe(recipeId, e) {
         e.preventDefault();
         try {

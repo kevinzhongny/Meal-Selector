@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Recipes.js';
 
 function CreateRecipe() {
-    const [form, setRecipes] = useState(null);
+    const [recipe, setRecipes] = useState(null);
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setRecipes({... form, [name]: value });
+        setRecipes({... recipe, [name]: value });
     }
 
     function handleSubmit(e) {
@@ -17,7 +16,8 @@ function CreateRecipe() {
 
     async function createRecipe() {
         try {
-            const res = await axios.post('http://localhost:8080/recipes', form);
+            const res = await axios.post('http://localhost:8080/recipes', recipe);
+            console.log(res.data);
             setRecipes([res.data]);
         } catch(e) {
             console.error(e, e.message);
