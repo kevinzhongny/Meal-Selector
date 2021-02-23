@@ -35,6 +35,9 @@ public class Recipe {
     @Column
     private String url;
 
+    public Recipe() {
+    }
+
     public Long getId() {
         return id;
     }

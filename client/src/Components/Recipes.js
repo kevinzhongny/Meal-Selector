@@ -24,21 +24,15 @@ function Recipes() {
         setSelectedRecipe(recipe);
     }
 
-    const [form, setForm] = useState(null);
-
     function handleChange(e) {
         const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
+        setSelectedRecipe({ ...selectedRecipe, [name]: value });
     }
 
-    function handleSubmit(e) {
+    async function editRecipe(e) {
         e.preventDefault();
-        editRecipe();        
-    }
-
-    async function editRecipe() {
         try {
-            const res = await axios.patch('http://localhost:8008/recipes', form);
+            const res = await axios.patch('http://localhost:8080/recipes', selectedRecipe);
             console.log(res.data);
             getRecipes();
         } catch(e) {
@@ -62,7 +56,7 @@ function Recipes() {
             { selectedRecipe && <form
                 className='recipe-form'
                 onChange={ (e) => handleChange(e) }
-                onSubmit={ (e) => handleSubmit(e) }>
+                onSubmit={ (e) => editRecipe(e) }>
                 <label>
                     Name: 
                     <input type="text" name="name" defaultValue = { selectedRecipe.name }/>

@@ -2,7 +2,6 @@
 App that stores recipes and helps user randomly select their next cooked meal
 
 ## To-Do List
-* Fix CORS PATCH issue
 * Create backend queries for specific ingredients/cuisines with corresponding frontend buttons
 * Style each individual recipe card
 * Create user/password database for individualized usage
