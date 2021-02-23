@@ -15,4 +15,24 @@
 
 a {
   color: #61dafb;
+  text-decoration: none;
+}
+
+.link-header {
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+li {
+  padding: 10px;
+}
+
+.recipe-form {
+  border: solid white 1px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -6,11 +6,7 @@ function Recipes() {
 
     async function getRecipes() {
         try {
-            const res = await axios.get('http://localhost:8080/recipes', {
-                params: {
-                    name: "Mapo Tofu"
-                }
-            });
+            const res = await axios.get('http://localhost:8080/recipes');
             setRecipes(res.data);
         } catch(e) {
             console.error(e, e.message);

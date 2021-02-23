@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CreateRecipe from './Components/CreateRecipe';
 import Recipes from './Components/Recipes';
 import Home from './Components/Home';
 import './App.css';
@@ -16,13 +17,16 @@ class App extends React.Component {
           <Router>
           <div>
             <nav>
-              <ul>
+              <ul className='link-header'>
                 <li>
                   <Link to="/">Home</Link>
                 </li>
                 <li>
                   <Link to="/recipes">Recipes</Link>
                 </li>
+                <li>
+                  <Link to="/create_recipe">Create Recipe</Link>
+                </li>  
               </ul>
             </nav>
   
@@ -31,6 +35,9 @@ class App extends React.Component {
             <Switch>
               <Route path="/recipes">
                 <Recipes />
+              </Route>
+              <Route path="/create_recipe">
+                <CreateRecipe />
               </Route>
               <Route path="/">
                 <Home />
