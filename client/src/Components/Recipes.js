@@ -17,7 +17,8 @@ function Recipes() {
         getRecipes();
     }, [])
 
-    async function deleteRecipe(recipeId) {
+    async function deleteRecipe(recipeId, e) {
+        e.preventDefault();
         try {
             const res = await axios.delete('http://localhost:8080/recipes/' + recipeId);
             console.log(res.data);
@@ -43,7 +44,7 @@ function Recipe({ recipe, deleteRecipe }) {
                     <b>Cuisine:</b> { recipe.cuisine }<br></br>
                     <b>Ingredients:</b> { recipe.ingredient1 }, { recipe.ingredient2 }, { recipe.ingredient3 }, { recipe.ingredient4 }, { recipe.ingredient5 }<br></br>
                     <a href={ recipe.url }>{ recipe.url }</a><br></br>
-                    <button onClick={ () => deleteRecipe(recipe.id) }>Delete Recipe</button></ul>
+                    <button onClick={ (e) => deleteRecipe(recipe.id, e) }>Delete Recipe</button></ul>
                 </span>
             </form>
         </div>
