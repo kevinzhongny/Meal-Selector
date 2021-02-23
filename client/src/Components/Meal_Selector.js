@@ -7,7 +7,7 @@ function Meal_Selector() {
 
     async function getRecipes() {
         try {
-            const res = await axios.get('http://localhost:8080/recipes');
+            const res = await axios.get('https://calm-atoll-21972.herokuapp.com/recipes');
             const recipeNum = Math.floor(Math.random() * res.data.length);
             const randomRecipe = res.data[recipeNum];
             // console.log(randomRecipe);

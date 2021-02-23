@@ -6,7 +6,7 @@ function Recipes() {
 
     async function getRecipes() {
         try {
-            const res = await axios.get('http://localhost:8080/recipes');
+            const res = await axios.get('https://calm-atoll-21972.herokuapp.com/recipes');
             setRecipes(res.data);
         } catch(e) {
             console.error(e, e.message);
@@ -32,7 +32,7 @@ function Recipes() {
     async function editRecipe(e) {
         e.preventDefault();
         try {
-            const res = await axios.patch('http://localhost:8080/recipes', selectedRecipe);
+            const res = await axios.patch('https://calm-atoll-21972.herokuapp.com/recipes', selectedRecipe);
             console.log(res.data);
             getRecipes();
         } catch(e) {
@@ -43,7 +43,7 @@ function Recipes() {
     async function deleteRecipe(recipeId, e) {
         e.preventDefault();
         try {
-            const res = await axios.delete('http://localhost:8080/recipes/' + recipeId);
+            const res = await axios.delete('https://calm-atoll-21972.herokuapp.com/recipes/' + recipeId);
             console.log(res.data);
             getRecipes();
         } catch (e) {

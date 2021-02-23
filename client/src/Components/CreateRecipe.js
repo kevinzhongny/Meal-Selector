@@ -16,7 +16,7 @@ function CreateRecipe() {
 
     async function createRecipe() {
         try {
-            const res = await axios.post('http://localhost:8080/recipes', recipe);
+            const res = await axios.post('https://calm-atoll-21972.herokuapp.com/recipes', recipe);
             console.log(res.data);
             setRecipes([res.data]);
         } catch(e) {
